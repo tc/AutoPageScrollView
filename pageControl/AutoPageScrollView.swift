@@ -18,15 +18,16 @@ protocol AutoPageScrollViewDelegate {
 
 class AutoPageScrollView: UIView, UIScrollViewDelegate {
     var repeatScroll = true
-    static let timerInterval = 5.0
-    static let scrollViewFrame = CGRectMake(0, 0, 600,  300)
+
+    static let scrollViewFrame = CGRectMake(0, 0, 600, 300)
     static let pageControlFrame = CGRectMake(100, 300, 200, 50)
     
     var delegate:AutoPageScrollViewDelegate?
     
     let scrollView = UIScrollView(frame: scrollViewFrame)
     var pageControl: UIPageControl = UIPageControl(frame: pageControlFrame)
-
+    var timer:NSTimer?
+    
     var views:[UIView]? {
         didSet {
             
@@ -48,6 +49,13 @@ class AutoPageScrollView: UIView, UIScrollViewDelegate {
         }
     }
     
+    var timerInterval = 5.0 {
+        didSet {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(self.timerInterval, target: self, selector: "updatePage", userInfo: nil, repeats: true)
+            
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -63,7 +71,7 @@ class AutoPageScrollView: UIView, UIScrollViewDelegate {
 
         pageControl.addTarget(self, action: Selector("nextPage:"), forControlEvents: UIControlEvents.ValueChanged)
 
-        NSTimer.scheduledTimerWithTimeInterval(AutoPageScrollView.timerInterval, target: self, selector: "updatePage", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(self.timerInterval, target: self, selector: "updatePage", userInfo: nil, repeats: true)
     }
  
     func nextPage(sender: AnyObject) {
