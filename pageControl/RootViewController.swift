@@ -9,17 +9,13 @@
 import UIKit
 
 class RootViewController: UIViewController, AutoPageScrollViewDelegate {
-    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var autoPager: AutoPageScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let autoPager = AutoPageScrollView(frame: self.mainView.frame)
-        
-        autoPager.delegate = self
-        self.mainView.addSubview(autoPager)
-
-        autoPager.views = createPageViews(self.mainView.frame, titles: ["Hello", "World", "Today"])
+        autoPager?.delegate = self
+        autoPager?.views = createPageViews(autoPager.frame, titles: ["Hello", "World", "Today"])
     }
     
     //MARK: - AutoPageScrollViewDelegate

@@ -30,12 +30,15 @@ class AutoPageScrollView: UIView, UIScrollViewDelegate {
     var views:[UIView]? {
         didSet {
             if let s = scrollView {
+                s.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
+                
                 for (index, view) in views!.enumerate() {
                     var frame = CGRectMake(0, 0, 0, 0)
                     frame.origin.x = s.frame.size.width * CGFloat(index)
                     frame.size = s.frame.size
                     
                     view.frame = frame
+
                     s.addSubview(view)
                 }
                 
@@ -51,13 +54,8 @@ class AutoPageScrollView: UIView, UIScrollViewDelegate {
         }
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
         
         scrollView?.delegate = self
         
