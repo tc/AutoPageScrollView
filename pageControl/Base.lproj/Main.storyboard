@@ -15,8 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7i-vV-nxC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="yLd-Fv-lgQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="n7i-vV-nxC" firstAttribute="leading" secondItem="502-Ir-ELC" secondAttribute="leading" id="1Hh-Ne-UxD"/>
+                            <constraint firstItem="n7i-vV-nxC" firstAttribute="top" secondItem="502-Ir-ELC" secondAttribute="top" id="4xq-rN-mMy"/>
+                            <constraint firstAttribute="trailing" secondItem="n7i-vV-nxC" secondAttribute="trailing" id="a1i-pQ-2jk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="n7i-vV-nxC" id="Zza-AP-Bry"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,29 +9,17 @@
 import UIKit
 
 class RootViewController: UIViewController, AutoPageScrollViewDelegate {
+    @IBOutlet weak var mainView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let autoPager = AutoPageScrollView(frame: self.view.frame)
+        let autoPager = AutoPageScrollView(frame: self.mainView.frame)
         
         autoPager.delegate = self
- 
-        self.view.addSubview(autoPager)
+        self.mainView.addSubview(autoPager)
 
-        autoPager.views = createFourViews(self.view.frame)
-    }
-    
-    func createFourViews(frame:CGRect) -> [UIView] {
-        let colors:[UIColor] = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
-        
-        let views = colors.map { (color:UIColor) -> UIView in
-            let subView = UIView(frame: frame)
-            subView.backgroundColor = color
-            return subView
-        }
-        
-        return views
+        autoPager.views = createPageViews(self.mainView.frame, titles: ["Hello", "World", "Today"])
     }
     
     //MARK: - AutoPageScrollViewDelegate
@@ -49,6 +37,25 @@ class RootViewController: UIViewController, AutoPageScrollViewDelegate {
     
     func onFinished() {
         NSLog("onFinished")
+    }
+    
+    //MARK: - UI
+    func createPageViews(frame:CGRect, titles:[String]) -> [UIView] {
+        let colors:[UIColor] = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
+
+        var views:[UIView] = []
+        
+        for (index, title) in titles.enumerate() {
+            let v = NSBundle.mainBundle().loadNibNamed("PageView", owner: self, options: nil)[0] as! PageView
+            v.frame = frame
+            v.index = index
+            v.title = title
+            v.backgroundColor = colors[index % colors.count]
+
+            views.append(v)
+        }
+        
+        return views
     }
 
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655132FF1BC6CC0100AA56C0 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655132FE1BC6CC0100AA56C0 /* PageView.swift */; settings = {ASSET_TAGS = (); }; };
+		655133011BC6CF2C00AA56C0 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655133001BC6CF2C00AA56C0 /* PageView.xib */; settings = {ASSET_TAGS = (); }; };
 		658BEB001BBF182600842ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BEAFF1BBF182600842ED3 /* AppDelegate.swift */; };
 		658BEB021BBF182600842ED3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BEB011BBF182600842ED3 /* RootViewController.swift */; };
 		658BEB091BBF182600842ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658BEB071BBF182600842ED3 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		655132FE1BC6CC0100AA56C0 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		655133001BC6CF2C00AA56C0 /* PageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
 		658BEAFC1BBF182600842ED3 /* pageControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pageControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658BEAFF1BBF182600842ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		658BEB011BBF182600842ED3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				658BEAFF1BBF182600842ED3 /* AppDelegate.swift */,
 				658BEB011BBF182600842ED3 /* RootViewController.swift */,
 				658BEB311BBF215500842ED3 /* AutoPageScrollView.swift */,
+				655132FE1BC6CC0100AA56C0 /* PageView.swift */,
+				655133001BC6CF2C00AA56C0 /* PageView.xib */,
 				658BEB071BBF182600842ED3 /* Main.storyboard */,
 				658BEB0A1BBF182600842ED3 /* Assets.xcassets */,
 				658BEB0C1BBF182600842ED3 /* LaunchScreen.storyboard */,
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658BEB0E1BBF182600842ED3 /* LaunchScreen.storyboard in Resources */,
+				655133011BC6CF2C00AA56C0 /* PageView.xib in Resources */,
 				658BEB0B1BBF182600842ED3 /* Assets.xcassets in Resources */,
 				658BEB091BBF182600842ED3 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658BEB021BBF182600842ED3 /* RootViewController.swift in Sources */,
+				655132FF1BC6CC0100AA56C0 /* PageView.swift in Sources */,
 				658BEB321BBF215500842ED3 /* AutoPageScrollView.swift in Sources */,
 				658BEB001BBF182600842ED3 /* AppDelegate.swift in Sources */,
 			);
@@ -487,6 +495,7 @@
 				658BEB2A1BBF182600842ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		658BEB2B1BBF182600842ED3 /* Build configuration list for PBXNativeTarget "pageControlTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +504,7 @@
 				658BEB2D1BBF182600842ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		658BEB2E1BBF182600842ED3 /* Build configuration list for PBXNativeTarget "pageControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +513,7 @@
 				658BEB301BBF182600842ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
